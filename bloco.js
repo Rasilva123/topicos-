@@ -4,6 +4,14 @@ const crypto = require('crypto');
 class Bloco {
     constructor(indice, dados, hashAnterior) {
 
+        if (typeof indice !== 'number') {
+            throw new Error('O indice deve ser um numero.');
+        }
+
+        if (typeof hashAnterior !== 'string') {
+            throw new Error('O hash anterior deve ser um texto.');
+        }
+
         if (typeof dados !== 'string') {
             throw new Error('Os dados da entrega devem ser um texto.');
         }
